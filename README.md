@@ -47,3 +47,4 @@ Equipe SyntaxSquad:
 - Emanuel Henrique Cunha Vasco
 - Luiz Marcelo Alves
 - Vitor Hugo Estefano Barbosa
+
