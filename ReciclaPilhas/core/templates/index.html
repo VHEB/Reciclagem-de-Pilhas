@@ -19,10 +19,10 @@
     </header>
     <nav>
         <ul>
-            <li><a href="./pages/sobre.html" alt="Direciona para página Sobre">Sobre</a></li>
-            <li><a href="./pages/cadastroPontoDeColeta.html" alt="Direciona para página de cadastro de pontos de coleta" >Ponto de Coleta</a></li>
-            <li><a href="./pages/cadastroUsuario.html" alt="Direciona para página de cadastro do usuário">Cadastro</a></li>
-            <li><a href="./pages/login.html" alt="Direciona para página login">Login</a></li>
+            <li><a href="{% url 'sobre' %}" alt="Direciona para página Sobre">Sobre</a></li>
+            <li><a href="{% url 'cadastrar_ponto' %}" alt="Direciona para página de cadastro de pontos de coleta" >Ponto de Coleta</a></li>
+            <li><a href="{% url 'cadastrar_usuario' %}" alt="Direciona para página de cadastro do usuário">Cadastro</a></li>
+            <li><a href="{% url 'login' %}" alt="Direciona para página login">Login</a></li>
         </ul>
     </nav>
     <section id="benefits">

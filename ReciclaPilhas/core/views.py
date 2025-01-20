@@ -7,6 +7,9 @@ from django.conf import settings
 def home(request):
     return render(request, 'index.html')
 
+def login(request):
+    return render(request, 'login.html')
+
 # View para cadastro de usuário
 def cadastrar_usuario(request):
     if request.method == 'POST':
