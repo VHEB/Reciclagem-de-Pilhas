@@ -3,6 +3,10 @@ from .forms import UsuarioForm, PontoColetaForm, ContatoForm
 from django.core.mail import send_mail
 from django.conf import settings
 
+
+def home(request):
+    return render(request, 'index.html')
+
 # View para cadastro de usuário
 def cadastrar_usuario(request):
     if request.method == 'POST':
@@ -12,7 +16,7 @@ def cadastrar_usuario(request):
             return redirect('sucesso')
     else:
         form = UsuarioForm()
-    return render(request, 'core/templates/cadastroUsuario.html', {'form': form})
+    return render(request, 'cadastroUsuario.html', {'form': form})
 
 # View para cadastro de ponto de coleta
 def cadastrar_ponto_coleta(request):
@@ -23,7 +27,7 @@ def cadastrar_ponto_coleta(request):
             return redirect('sucesso')
     else:
         form = PontoColetaForm()
-    return render(request, 'core/templates/cadastroPontoDeColeta.html', {'form': form})
+    return render(request, 'cadastroPontoDeColeta.html', {'form': form})
 
 # View para envio de email de contato
 def enviar_contato(request):
@@ -43,4 +47,4 @@ def enviar_contato(request):
             return redirect('sucesso')
     else:
         form = ContatoForm()
-    return render(request, 'core/templates/sobre.html', {'form': form})
+    return render(request, 'sobre.html', {'form': form})
