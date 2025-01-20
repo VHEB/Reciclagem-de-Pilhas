@@ -1,18 +1,19 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Recicle suas pilhas e baterias de forma responsável. Encontre pontos de coleta e ajude a preservar o meio ambiente.">
-    <link rel="icon" href="./recursos/icon/Logo.ico" type="image/x-icon">
+    <link rel="icon" href="{% static 'icon/Logo.ico' %}" type="image/x-icon">
     <title>Recicla Pilhas - Cadastro</title>
-    <link rel="stylesheet" href="../css/styles.css"> <!-- Conectando o CSS -->
-    <link rel="stylesheet" href="../css/forms.css">
-    <link rel="stylesheet" href="../css/team.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> <!-- Conectando o CSS -->
+    <link rel="stylesheet" href="{% static 'css/forms.css' %}">
+    <link rel="stylesheet" href="{% static 'css/team.css' %}">
 </head>
 <body>
     <header>
-        <a href="../index.html" > <img src="../recursos/img/logo.png" alt="Logo Recicla Pilhas" id="background-logo" > </a> 
+        <a href="{% url 'home' %}" > <img src="{% static 'img/logo.png' %}" alt="Logo Recicla Pilhas" id="background-logo" > </a> 
         <h1>Dê uma carga de responsabilidade ao meio ambiente</h1>
         <p>Recicle suas pilhas e baterias de forma consciente e ajude a preservar o meio ambiente.</p>
     </header>
@@ -38,38 +39,31 @@
     <section id="team">
         
         <div class="team-member">
-            <img src="../recursos/img/Vitor Hugo.jpg" alt="Vitor Hugo Estefano Barbosa">
+            <img src="{% static 'img/Vitor Hugo.jpg' %}" alt="Vitor Hugo Estefano Barbosa">
             <h3>Vitor Hugo Estefano Barbosa</h3>
             <a href="https://www.linkedin.com/in/vitor-heb/" target="_blank">
-                <img id="logo" src="../recursos/img/linkedIn.png" alt="LinkedIn">
+                <img id="logo" src="{% static 'img/linkedIn.png' %}" alt="LinkedIn">
             </a>
         </div>
         <div class="team-member">
-            <img src="../recursos/img/Luiz Marcelo Alves.jpg" alt=" Luiz Marcelo Alves">
+            <img src="{% static 'img/Luiz Marcelo Alves.jpg' %}" alt=" Luiz Marcelo Alves">
             <h3> Luiz Marcelo Alves</h3>
             <a href="https://www.linkedin.com/in/luiz-marcelo-alves-607a21b0/" target="_blank">
-                <img id="logo" src="../recursos/img/linkedIn.png" alt="LinkedIn">
+                <img id="logo" src="{% static 'img/linkedIn.png' %}" alt="LinkedIn">
             </a>
         </div>
         <div class="team-member">
-            <img src="../recursos/img/Efraim Rodrigo Alves.jpg" alt=" Efraim Rodrigo Alves">
+            <img src="{% static 'img/Efraim Rodrigo Alves.jpg' %}" alt=" Efraim Rodrigo Alves">
             <h3> Efraim Rodrigo Alves</h3>
             <a href="https://www.linkedin.com/in/efraim-rodrigo-alves-950b152b5/" target="_blank">
-                <img id="logo" src="../recursos/img/linkedIn.png" alt="LinkedIn">
+                <img id="logo" src="{% static 'img/linkedIn.png' %}" alt="LinkedIn">
             </a>
         </div>
         <div class="team-member">
-            <img src="../recursos/img/Emanuel Henrique.jpg" alt="Emanuel Henrique">
+            <img src="{% static 'img/Emanuel Henrique.jpg' %}" alt="Emanuel Henrique">
             <h3>Emanuel Henrique</h3>
             <a href="https://www.linkedin.com/in/emanuel-henrique-107a65309/" target="_blank">
-                <img id="logo" src="../recursos/img/linkedIn.png" alt="LinkedIn">
-            </a>
-        </div>
-        <div class="team-member">
-            <img src="/recursos/img/member5.jpg" alt="Bruna">
-            <h3>Bruna</h3>
-            <a href="https://www.linkedin.com/in/integrante5" target="_blank">
-                <img id="logo" src="../recursos/img/linkedIn.png" alt="LinkedIn">
+                <img id="logo" src="{% static 'img/linkedIn.png' %}" alt="LinkedIn">
             </a>
         </div>
     </section>
