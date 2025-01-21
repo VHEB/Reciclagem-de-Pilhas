@@ -20,7 +20,8 @@
 
     <section id="contact"></section>
         <h2>Contato</h2>
-        <form action="/submit_contact" method="post">
+        <form method="POST">
+            {% csrf_token %}
             <label for="name">Nome:</label>
             <input type="text" id="name" name="name" required>
             
