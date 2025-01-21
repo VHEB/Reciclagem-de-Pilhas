@@ -88,7 +88,7 @@ Rode o código abaixo no terminal e divirta-se.
 python manage.py runserver
 ```
 
-## :Book: **Bibliotecas**
+## :book: **Bibliotecas**
 
 Esse projeto foi desenvolvido com as seguintes bibliotecas, linguagens e ferramentas:
 
