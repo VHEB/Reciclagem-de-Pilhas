@@ -14,7 +14,7 @@ class UsuarioForm(forms.ModelForm):
 class PontoColetaForm(forms.ModelForm):
     class Meta:
         model = PontoColeta
-        fields = ['nome_empresa', 'telefone', 'endereco']
+        fields = ['nome_empresa', 'telefone', 'endereco', 'rua', 'cep', 'bairro', 'numero']
 
 
 class ContatoForm(forms.ModelForm):

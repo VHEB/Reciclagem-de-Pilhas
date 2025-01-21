@@ -14,6 +14,10 @@ class PontoColeta(models.Model):
     nome_empresa = models.CharField(max_length=150)
     telefone = models.CharField(max_length=15)
     endereco = models.TextField()
+    rua = models.CharField(max_length=150, default='Rua Principal') 
+    cep = models.CharField(max_length=9, default='00000-000')     
+    bairro = models.CharField(max_length=100, default='Centro')  
+    numero = models.CharField(max_length=10, default='S/N')
 
     def __str__(self):
         return self.nome_empresa
