@@ -11,6 +11,9 @@ urlpatterns = [
     path('cadastroPontoDeColeta/', views.cadastrar_ponto_coleta, name='cadastrar_ponto'),
     path('sobre/', views.enviar_contato, name='sobre'),
     path('login/', views.login, name='login'),
+    path('perfil/', views.perfil, name='perfil'),
+    path('logout/', views.logout_view, name='logout'),
+    path('editar_perfil/', views.editar_perfil, name='editar_perfil'),
     path('sucesso/', lambda request: render(request, 'sucesso.html'), name='sucesso'),
 ]
 

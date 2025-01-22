@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Perfil do usuário logado">
+    <link rel="icon" href="{% static 'icon/Logo.ico' %}" type="image/x-icon">
+    <title>Recicla Pilhas - Perfil</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <a href="{% url 'home' %}">
+            <img src="{% static 'img/logo.png' %}" alt="Logo Recicla Pilhas">
+        </a>
+        <h1>Bem-vindo, {{ usuario.nome }}!</h1>
+        <p>Gerencie suas informações e contribua para o meio ambiente.</p>
+    </header>
+    <section>
+        <h2>Informações do Usuário</h2>
+        <ul>
+            <li><strong>Nome:</strong> {{ usuario.nome }}</li>
+            <li><strong>Email:</strong> {{ usuario.email }}</li>
+        </ul>
+
+        <h3>Opções:</h3>
+        <ul>
+            <li><a href="{% url 'cadastrar_ponto' %}">Cadastrar um Ponto de Coleta</a></li>
+            <li><a href="{% url 'editar_perfil' %}">Editar meus dados</a></li>
+            <li><a href="{% url 'logout' %}">Sair</a></li>
+        </ul>
+    </section>
+    <footer>
+        <p>&copy; 2024 Recicla Pilhas. Todos os direitos reservados.</p>
+        <p><a href="mailto:contato@reciclapilhas.com">Contato</a> | <a href="#">Política de Privacidade</a></p>
+    </footer>
+</body>
+</html>
