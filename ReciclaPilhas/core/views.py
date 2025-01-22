@@ -28,17 +28,22 @@ def cadastrar_usuario(request):
 
 # View para cadastro de ponto de coleta
 def cadastrar_ponto_coleta(request):
-    if not request.session.get('usuario_id'):
-        return redirect('login')
+    usuario_logado = request.session.get('usuario_id') is not None
 
     if request.method == 'POST':
+        if not usuario_logado:
+            return redirect('login')
+        
         form = PontoColetaForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('sucesso')
     else:
         form = PontoColetaForm()
-    return render(request, 'cadastroPontoDeColeta.html', {'form': form})
+
+    return render(request, 'cadastroPontoDeColeta.html', {'form': form, 'usuario_logado': usuario_logado})
+
+
 
 # View para envio de email de contato
 def enviar_contato(request):
