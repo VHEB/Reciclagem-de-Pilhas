@@ -8,10 +8,38 @@
     <meta name="description" content="Recicle suas pilhas e baterias de forma responsável. Encontre pontos de coleta e ajude a preservar o meio ambiente.">
     <link rel="icon" href="{% static 'icon/Logo.ico' %}" type="image/x-icon">
     <title>Recicla Pilhas - Dê uma carga de responsabilidade ao meio ambiente</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> <!-- Conectando o CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> 
+    <script src="{% static 'javascript/acessibilidade.js' %}"></script>
 </head>
 <body>
     <header>
+        <div id="acessibilidade-menu" class="acessibilidade-menu">
+            <span>Acessibilidade</span>
+            <div>
+                <button id="diminuir-fonte" aria-label="Diminuir tamanho da fonte">
+                    <span class="sr-only">Diminuir tamanho da fonte</span>
+                    A-
+                </button>
+                <button id="normalizar-fonte" aria-label="Normalizar tamanho da fonte">
+                    <span class="sr-only">Normalizar tamanho da fonte</span>
+                    aA
+                </button>
+                <button id="aumentar-fonte" aria-label="Aumentar tamanho da fonte">
+                    <span class="sr-only">Aumentar tamanho da fonte</span>
+                    A+
+                </button>
+            </div>
+            <button id="contraste" aria-label="Ativar/desativar modo de alto contraste">
+                <img src="{% static 'icon/Contraste.svg' %}" alt="Ativar e desativar modo de alto contraste">
+            </button>
+            <button id="vlibras-button" aria-label="Ativar VLibras">
+                <span class="sr-only">Ativar/desativar VLibras</span>
+                <img src="{% static 'icon/VLibras.svg' %}" alt="Ativar e desativar VLibras">
+            </button>
+            <div vw class="enabled">
+                <div vw-access-button class="active"></div>
+            </div>
+        </div>
         <img id="background-logo" src="{% static 'img/logo.png' %}" alt="Logo Recicla Pilhas" >
         <h1>Dê uma carga de responsabilidade ao meio ambiente</h1>
         <p>Recicle suas pilhas e baterias de forma consciente e ajude a preservar o meio ambiente.</p>
@@ -52,6 +80,12 @@
         <p><a href="mailto:contato@reciclapilhas.com">Contato</a> | <a href="#">Política de Privacidade</a></p>
     </footer>
 
-    <script src="{% static 'javascript/script.js' %}"></script> <!-- Conectando o JavaScript -->
+    <script src="{% static 'javascript/script.js' %}"></script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        });
+    </script>
 </body>
 </html>
