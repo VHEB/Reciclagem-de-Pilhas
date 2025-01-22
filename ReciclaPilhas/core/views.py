@@ -14,7 +14,11 @@ def login(request):
 def cadastrar_usuario(request):
     if request.method == 'POST':
         form = UsuarioForm(request.POST)
+        confirmar_senha = request.POST.get('confirmar-senha')
+        
         if form.is_valid():
+            if form.cleaned_data['senha'] != confirmar_senha:
+                return render(request, 'cadastroUsuario.html', {'form': form, 'erro_confirmacao': 'As senhas não coincidem.'})
             form.save()
             return redirect('sucesso')
     else:
