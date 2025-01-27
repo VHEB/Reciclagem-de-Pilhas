@@ -36,12 +36,6 @@
                 <span class="sr-only">Ativar/desativar VLibras</span>
                 <img src="{% static 'icon/VLibras.svg' %}" alt="Ativar e desativar VLibras">
             </button>
-            <div vw class="enabled">
-                <div vw-access-button class="active"></div>
-                <div vw-plugin-wrapper>
-                  <div class="vw-plugin-top-wrapper"></div>
-                </div>
-            </div>
         </div>
         <img id="background-logo" src="{% static 'img/logo.png' %}" alt="Logo Recicla Pilhas" >
         <h1>Dê uma carga de responsabilidade ao meio ambiente</h1>
@@ -84,6 +78,12 @@
     </footer>
 
     <script src="{% static 'javascript/script.js' %}"></script>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
