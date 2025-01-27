@@ -32,9 +32,9 @@ window.addEventListener('load', () => {
     }
 
     if (contraste) {
-        contraste.addEventListener('click', function () {
+        document.getElementById('contraste').addEventListener('click', function() {
             document.body.classList.toggle('alto-contraste');
-        });
+        });               
     }
 
     if (vlibrasButton) {

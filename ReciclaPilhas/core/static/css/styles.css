@@ -158,16 +158,38 @@ footer a:hover {
 }
 
 /* Estilo do Acessibilidade */
-.alto-contraste {
+/* Estilo do Acessibilidade */
+.alto-contraste table, 
+.alto-contraste form, 
+.alto-contraste input, 
+.alto-contraste textarea, 
+.alto-contraste button, 
+.alto-contraste select, 
+.alto-contraste section, 
+.alto-contraste header, 
+.alto-contraste footer, 
+.alto-contraste nav, 
+.alto-contraste #benefits,
+.alto-contraste #impact,
+.alto-contraste h1, 
+.alto-contraste h2, 
+.alto-contraste h3, 
+.alto-contraste p, 
+.alto-contraste ul, 
+.alto-contraste ol, 
+.alto-contraste li,
+.alto-contraste a{
     background-color: #000 !important;
     color: #fff !important;
 }
-
-.alto-contraste a {
-    color: #ff0 !important;
-    text-decoration: underline;
+.alto-contraste #background-logo{
+    background-color: transparent !important;
+    filter: none !important;
 }
-
 .alto-contraste img {
     filter: invert(1);
+}
+
+.alto-contraste button {
+    border: 2px solid #fff !important;
 }
