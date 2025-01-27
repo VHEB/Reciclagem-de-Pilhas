@@ -9,7 +9,7 @@
     <link rel="icon" href="{% static 'icon/Logo.ico' %}" type="image/x-icon">
     <title>Recicla Pilhas - Dê uma carga de responsabilidade ao meio ambiente</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}"> 
-    <script src="{% static 'javascript/acessibilidade.js' %}"></script>
+    
 </head>
 <body>
     <header>
@@ -36,6 +36,8 @@
                 <span class="sr-only">Ativar/desativar VLibras</span>
                 <img src="{% static 'icon/VLibras.svg' %}" alt="Ativar e desativar VLibras">
             </button>
+            
+            <!-- Div obrigatória para o VLibras funcionar -->
             <div vw class="enabled">
                 <div vw-access-button class="active"></div>
             </div>
@@ -81,11 +83,16 @@
     </footer>
 
     <script src="{% static 'javascript/script.js' %}"></script>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-        window.addEventListener('load', function () {
-            new window.VLibras.Widget('https://vlibras.gov.br/app');
-        });
-    </script>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+      </div>
+      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+      <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+      </script>
+    <script src="{% static 'javascript/acessibilidade.js' %}"></script>
 </body>
 </html>

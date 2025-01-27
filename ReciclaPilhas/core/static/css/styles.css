@@ -156,3 +156,18 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+/* Estilo do Acessibilidade */
+.alto-contraste {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.alto-contraste a {
+    color: #ff0 !important;
+    text-decoration: underline;
+}
+
+.alto-contraste img {
+    filter: invert(1);
+}
