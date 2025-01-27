@@ -3,8 +3,7 @@ window.addEventListener('load', () => {
     const diminuirFonte = document.getElementById('diminuir-fonte');
     const normalizarFonte = document.getElementById('normalizar-fonte');
     const contraste = document.getElementById('contraste');
-    //const vlibrasButton = document.getElementById('vlibras-button');  // Certifique-se de que esta linha está presente
-
+    const vlibrasButton = document.getElementById('vlibras-button');
     let fontSize = 1;
 
     if (aumentarFonte) {
@@ -38,5 +37,12 @@ window.addEventListener('load', () => {
         });
     }
 
-    
+    if (vlibrasButton) {
+        document.getElementById('vlibras-button').addEventListener('click', function () {
+            const vlibrasWidget = document.querySelector('[vw-access-button]')
+            if (vlibrasWidget) {
+                vlibrasWidget.click()
+            }
+        })
+    }
 });
