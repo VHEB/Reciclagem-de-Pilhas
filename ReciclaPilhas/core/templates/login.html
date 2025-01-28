@@ -42,21 +42,24 @@
         <h1>Dê uma carga de responsabilidade ao meio ambiente</h1>
         <p>Recicle suas pilhas e baterias de forma consciente e ajude a preservar o meio ambiente.</p>
     </header>
-    <div class="login-container">
+    <div class="form">
         <h1>Login</h1>
         <form method="POST">
             {% csrf_token %}
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha" required>
+            <div>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
             
             {% if erro %}
                 <p style="color: red;">{{ erro }}</p>
             {% endif %}
             
-            <button type="submit">Entrar</button>
+            <button id="cta-button" type="submit">Entrar</button>
         </form>
         <p>Não tem uma conta? <a href="{% url 'cadastrar_usuario' %}">Criar conta</a></p>
     </div>

@@ -57,7 +57,6 @@ nav ul li a {
 nav ul li a:hover {
     text-decoration: underline;
 }
-
 /* Estilo dos Títulos e Parágrafos */
 h1, h2 {
     color: var(--font-color);
@@ -92,7 +91,6 @@ header {
 #cta-button:hover {
     background-color: var(--destaque-color-hover);
 }
-
 /* Seções */
 section {
     padding: 20px;
