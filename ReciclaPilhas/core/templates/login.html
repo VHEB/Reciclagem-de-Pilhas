@@ -9,9 +9,35 @@
     <title>Recicla Pilhas - Cadastro</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}"> <!-- Conectando o CSS -->
     <link rel="stylesheet" href="{% static 'css/forms.css' %}">
+    <link rel="stylesheet" href="{% static 'css/acessibilidade.css' %}">
+    <script src="{% static 'javascript/acessibilidade.js' %}"></script>
 </head>
 <body>
     <header>
+        <div id="acessibilidade-menu" class="acessibilidade-menu">
+            <span>Acessibilidade</span>
+            <div>
+                <button id="diminuir-fonte" aria-label="Diminuir tamanho da fonte">
+                    <span class="sr-only">Diminuir tamanho da fonte</span>
+                    A-
+                </button>
+                <button id="normalizar-fonte" aria-label="Normalizar tamanho da fonte">
+                    <span class="sr-only">Normalizar tamanho da fonte</span>
+                    aA
+                </button>
+                <button id="aumentar-fonte" aria-label="Aumentar tamanho da fonte">
+                    <span class="sr-only">Aumentar tamanho da fonte</span>
+                    A+
+                </button>
+            </div>
+            <button id="contraste" aria-label="Ativar/desativar modo de alto contraste">
+                <img src="{% static 'icon/Contraste.svg' %}" alt="Ativar e desativar modo de alto contraste">
+            </button>
+            <button id="vlibras-button" aria-label="Ativar VLibras">
+                <span class="sr-only">Ativar/desativar VLibras</span>
+                <img src="{% static 'icon/VLibras.svg' %}" alt="Ativar e desativar VLibras">
+            </button>
+        </div>
         <a href="{% url 'home' %}" > <img src="{% static 'img/logo.png' %}" alt="Logo Recicla Pilhas" id="background-logo" > </a> 
         <h1>Dê uma carga de responsabilidade ao meio ambiente</h1>
         <p>Recicle suas pilhas e baterias de forma consciente e ajude a preservar o meio ambiente.</p>
@@ -39,5 +65,16 @@
         <p>&copy; 2024 Recicla Pilhas. Todos os direitos reservados.</p>
         <p><a href="mailto:contato@reciclapilhas.com">Contato</a> | <a href="#">Política de Privacidade</a></p>
     </footer>
+    
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
 </body>
 </html>
