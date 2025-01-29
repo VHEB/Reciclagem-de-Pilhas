@@ -49,6 +49,9 @@
             <li><a href="{% url 'cadastrar_ponto' %}" alt="Direciona para página de cadastro de pontos de coleta" >Ponto de Coleta</a></li>
             <li><a href="{% url 'cadastrar_usuario' %}" alt="Direciona para página de cadastro do usuário">Cadastro</a></li>
             <li><a href="{% url 'login' %}" alt="Direciona para página login">Login</a></li>
+            {% if request.session.usuario_id %}
+                <li><a href="{% url 'perfil' %}" alt="Ir para o perfil do usuário">Meu Perfil</a></li>
+            {% endif %}
         </ul>
     </nav>
     <section id="benefits">

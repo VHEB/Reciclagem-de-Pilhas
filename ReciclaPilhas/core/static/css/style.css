@@ -125,13 +125,56 @@ cite {
     width: 40px;
 }
 
-/* Estilo do Mapa */
-#map {
-    width: 80%;
-    height: 400px;
-    margin: 20px auto;
-    background-color: #bdc3c7;
+/* Estilizando Perfil */
+/* Centraliza a página de perfil */
+.perfil-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
+
+/* Lista de informações do usuário */
+.perfil-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Botões de ação */
+.perfil-botoes {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espaço entre os botões */
+    margin-top: 20px;
+}
+
+/* Estilização dos botões */
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Botão vermelho para logout */
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #a71d2a;
+}
+
 
 /* Estilizando a Lista de Pontos de Coleta */
 #pontos-coleta {

@@ -43,20 +43,25 @@
         <h1>Bem-vindo, {{ usuario.nome }}!</h1>
         <p>Gerencie suas informações e contribua para o meio ambiente.</p>
     </header>
-    <section>
-        <h2>Informações do Usuário</h2>
+    <section class="perfil-container">
+        <h1>Informações do Usuário</h1>
+        <br>
         <ul>
             <li><strong>Nome:</strong> {{ usuario.nome }}</li>
+            <br>
             <li><strong>Email:</strong> {{ usuario.email }}</li>
         </ul>
-
-        <h3>Opções:</h3>
-        <ul>
-            <li><a href="{% url 'cadastrar_ponto' %}">Cadastrar um Ponto de Coleta</a></li>
-            <li><a href="{% url 'editar_perfil' %}">Editar meus dados</a></li>
-            <li><a href="{% url 'logout' %}">Sair</a></li>
-        </ul>
+        <br>
+        <br>
+        <h1>Opções:</h1>
+        
+        <div class="perfil-botoes">
+            <a href="{% url 'cadastrar_ponto' %}" class="btn">Cadastrar Ponto</a>
+            <a href="{% url 'editar_perfil' %}" class="btn">Editar Perfil</a>
+            <a href="{% url 'logout' %}" class="btn btn-danger">Sair</a>
+        </div>
     </section>
+    
     <footer>
         <p>&copy; 2024 Recicla Pilhas. Todos os direitos reservados.</p>
         <p><a href="mailto:contato@reciclapilhas.com">Contato</a> | <a href="#">Política de Privacidade</a></p>
