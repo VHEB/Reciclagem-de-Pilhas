@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from .forms import UsuarioForm, PontoColetaForm, ContatoForm
 from django.core.mail import send_mail
 from django.conf import settings
-from .models import PontoColeta
+from .models import PontoColeta, Usuario
 from django.http import JsonResponse
 
 
