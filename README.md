@@ -11,7 +11,7 @@
 
 ## 🚀 **Guia**
 
-Este guia descreve como clonar o repositório, criar um ambiente virtual em Python e instalar as dependências do projeto usando o arquivo `requirements.txt`.
+Este guia descreve como clonar o repositório, configurar o ambiente e iniciar o projeto. Siga os passos abaixo para configurar o projeto localmente.
 
 ---
 
@@ -20,7 +20,7 @@ Este guia descreve como clonar o repositório, criar um ambiente virtual em Pyth
 Primeiro, clone o repositório para sua máquina local:
 
 ```bash
-git clone https://github.com/VHEB/PgZero-Adventure.git
+git clone https://github.com/VHEB/Reciclagem-de-Pilhas.git
 ```
 
 Navegue até a pasta do projeto.
@@ -69,7 +69,35 @@ pip install -r requirements.txt
 
 ---
 
-## 4 - **Verifique o Setup**
+# 4 - **Configuração do Banco de Dados**
+
+O projeto utiliza MySQL para armazenamento de dados. Antes de rodar o projeto, certifique-se de configurar o banco de dados corretamente.
+
+- Instale o MySQL em sua máquina.
+
+- Crie um banco de dados para o projeto.
+
+- Adicione as configurações do banco de dados no arquivo settings.py do Django. Exemplo:
+
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'recicla_pilhas',
+        'USER': 'seu_usuario',
+        'PASSWORD': 'sua_senha',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+```
+Realize as migrações para configurar o banco de dados:
+```
+python manage.py migrate
+```
+---
+
+## 5 - **Verifique o Setup**
 
 Certifique-se de que todas as dependências foram instaladas corretamente executando o comando:
 
@@ -79,7 +107,7 @@ pip list
 
 ---
 
-## 5 - **Inicie o Projeto**
+## 6 - **Inicie o Projeto**
 
 Agora você está pronto para executar o projeto!
 
@@ -98,8 +126,8 @@ Esse projeto foi desenvolvido com as seguintes bibliotecas, linguagens e ferrame
 - HTML
 - CSS
 - JavaScript
-- Figma
-- Trello
+- Figma: Para protótipos
+- Trello: Para gestão de tarefas
 
 ## 💻 **Projeto**
 
