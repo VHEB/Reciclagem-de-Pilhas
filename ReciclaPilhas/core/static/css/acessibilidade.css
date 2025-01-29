@@ -74,6 +74,7 @@
 .alto-contraste ul, 
 .alto-contraste ol, 
 .alto-contraste li,
+.alto-contraste strong,
 .alto-contraste a {
     background-color: #000 !important;
     color: #fff !important;

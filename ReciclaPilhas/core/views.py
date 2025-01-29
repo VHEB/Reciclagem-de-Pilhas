@@ -3,8 +3,9 @@ from django.shortcuts import render, redirect
 from .forms import UsuarioForm, PontoColetaForm, ContatoForm
 from django.core.mail import send_mail
 from django.conf import settings
-from .models import Usuario
+from .models import PontoColeta
 from django.http import JsonResponse
+
 
 def home(request):
     return render(request, 'index.html')
@@ -45,7 +46,7 @@ def cadastrar_ponto_coleta(request):
     return render(request, 'cadastroPontoDeColeta.html', {'form': form, 'usuario_logado': usuario_logado})
 
 def listar_pontos_coleta(request):
-    pontos = PontoColetaForm.objects.all().values("nome_empresa", "telefone", "rua", "bairro", "numero", "cep")
+    pontos = PontoColeta.objects.all().values("nome_empresa", "telefone", "rua", "bairro", "numero", "cep")
     return JsonResponse(list(pontos), safe=False)
 
 # View para envio de email de contato

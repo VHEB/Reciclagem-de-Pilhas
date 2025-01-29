@@ -3,7 +3,7 @@ document.getElementById("cta-button").addEventListener("click", function () {
         .then(response => response.json())
         .then(data => {
             let listaPontos = document.getElementById("lista-pontos");
-            listaPontos.innerHTML = ""; // Limpa antes de adicionar novos itens
+            listaPontos.innerHTML = ""; // Limpa a lista antes de adicionar novos itens
 
             if (data.length === 0) {
                 listaPontos.innerHTML = "<p>Nenhum ponto de coleta encontrado.</p>";
@@ -11,12 +11,22 @@ document.getElementById("cta-button").addEventListener("click", function () {
             }
 
             data.forEach(ponto => {
+                let endereco = `${ponto.rua}, ${ponto.numero}, ${ponto.bairro}, ${ponto.cep}`;
+                let googleMapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(endereco)}`;
+
                 let item = document.createElement("li");
-                item.innerHTML = `<strong>${ponto.nome_empresa}</strong><br>
-                                  📍 ${ponto.rua}, ${ponto.numero} - ${ponto.bairro}, ${ponto.cep}<br>
-                                  📞 ${ponto.telefone}`;
+                item.innerHTML = `
+                    <h3>${ponto.nome_empresa}</h3><br>
+                    📍 <a href="${googleMapsLink}" target="_blank" style="color: #1C6CD3; text-decoration: none;">
+                        ${ponto.rua}, ${ponto.numero} - ${ponto.bairro}, ${ponto.cep}
+                    </a><br>
+                    📞 ${ponto.telefone}
+                `;
                 listaPontos.appendChild(item);
             });
+
+            // Rola suavemente até a lista de pontos de coleta
+            document.getElementById("pontos-coleta").scrollIntoView({ behavior: "smooth" });
         })
         .catch(error => console.error("Erro ao carregar os pontos de coleta:", error));
 });
