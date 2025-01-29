@@ -8,7 +8,7 @@
     <meta name="description" content="Recicle suas pilhas e baterias de forma responsável. Encontre pontos de coleta e ajude a preservar o meio ambiente.">
     <link rel="icon" href="{% static 'icon/Logo.ico' %}" type="image/x-icon">
     <title>Recicla Pilhas - Dê uma carga de responsabilidade ao meio ambiente</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
     <link rel="stylesheet" href="{% static 'css/acessibilidade.css' %}">
     <script src="{% static 'javascript/acessibilidade.js' %}"></script>
 </head>
@@ -66,12 +66,11 @@
         </ul>
     </section>
 
-    <section id="collection-points">
-        <h2>Encontre um ponto de coleta</h2>
-        <p>Use nosso localizador de pontos de coleta e encontre o lugar mais próximo para descartar suas pilhas e baterias de maneira correta.</p>
-        <div id="map"> <!-- O mapa será gerado aqui via JavaScript --> </div>
-        
+    <section id="pontos-coleta">
+        <h2>Pontos de Coleta</h2>
+        <ul id="lista-pontos"></ul>
     </section>
+    
 
     <footer>
         <p>&copy; 2024 Recicla Pilhas. Todos os direitos reservados.</p>

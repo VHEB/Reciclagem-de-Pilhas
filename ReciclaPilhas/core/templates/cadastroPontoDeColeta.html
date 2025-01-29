@@ -7,7 +7,7 @@
     <meta name="description" content="Recicle suas pilhas e baterias de forma responsável. Encontre pontos de coleta e ajude a preservar o meio ambiente.">
     <link rel="icon" href="{% static 'icon/Logo.icon' %}" type="image/x-icon">
     <title>Recicla Pilhas - Cadastro</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css'%}"> <!-- Conectando o CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css'%}"> <!-- Conectando o CSS -->
     <link rel="stylesheet" href="{% static 'css/forms.css'%}">
     <link rel="stylesheet" href="{% static 'css/acessibilidade.css' %}">
     <script src="{% static 'javascript/acessibilidade.js' %}"></script>
@@ -44,33 +44,26 @@
     </header>
 
     <h1>Cadastro de Ponto de Coleta</h1>
-    {% if not request.session.usuario_id %}
-        <button onclick="mostrarAlerta()">Cadastrar</button>
-    {% else %}
         <form method="POST">
+            {% if not request.session.usuario_id %}
+                <button id="cta-button" onclick="mostrarAlerta()">Cadastrar</button>
+            {% else %}
             {% csrf_token %}
-            <label for="nome_empresa">Nome da Empresa:</label>
-            <input type="text" id="nome_empresa" name="nome_empresa" required>
+            <input type="text" id="nome_empresa" name="nome_empresa" placeholder="Nome da Empresa" required>
 
-            <label for="telefone">Telefone:</label>
-            <input type="tel" id="telefone" name="telefone" required>
+            <input type="tel" id="telefone" name="telefone" placeholder="Telefone" required>
 
-            <label for="endereco">Descrição:</label>
-            <input type="text" id="endereco" name="endereco" required>
+            <input type="text" id="endereco" name="endereco" placeholder="Descrição" required>
 
-            <label for="rua">Rua:</label>
-            <input type="text" id="rua" name="rua" required>
+            <input type="text" id="rua" name="rua" placeholder="Rua" required>
 
-            <label for="cep">CEP:</label>
-            <input type="text" id="cep" name="cep" required>
+            <input type="text" id="cep" name="cep" placeholder="CEP" required>
 
-            <label for="bairro">Bairro:</label>
-            <input type="text" id="bairro" name="bairro" required>
+            <input type="text" id="bairro" name="bairro" placeholder="Bairro" required>
 
-            <label for="numero">Número:</label>
-            <input type="text" id="numero" name="numero" required>
+            <input type="text" id="numero" name="numero" placeholder="Número" required>
 
-            <button type="submit">Cadastrar</button>
+            <button id="cta-button" type="submit">Cadastrar</button>
         </form>
     {% endif %}
     <footer>

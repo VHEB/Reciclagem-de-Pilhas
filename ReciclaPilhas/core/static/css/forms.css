@@ -16,14 +16,34 @@ textarea {
     text-align: left; /* Alinha o texto à esquerda */
 }
 
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os elementos */
+    justify-content: center; /* Alinha verticalmente */
+    text-align: center;
+    width: 100%;
+    max-width: 400px; /* Ajuste conforme necessário */
+    margin: 0 auto; /* Centraliza na página */
+    padding: 20px;
+    background: white; /* Ajuste conforme necessário */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-/* Estilo atualizado para formulários */
+input::placeholder {
+    color: #888; /* Cor do texto do placeholder */
+    font-style: italic;
+}
+
 form {
     display: flex;
-    position: center;
     flex-direction: column;
+    align-items: center;
     gap: 15px; /* Espaço entre os campos */
+    width: 100%;
 }
+
 
 form label {
     display: inline-block;

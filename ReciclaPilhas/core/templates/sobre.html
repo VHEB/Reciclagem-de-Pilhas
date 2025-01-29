@@ -7,7 +7,7 @@
     <meta name="description" content="Recicle suas pilhas e baterias de forma responsável. Encontre pontos de coleta e ajude a preservar o meio ambiente.">
     <link rel="icon" href="{% static 'icon/Logo.ico' %}" type="image/x-icon">
     <title>Recicla Pilhas - Cadastro</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> <!-- Conectando o CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Conectando o CSS -->
     <link rel="stylesheet" href="{% static 'css/forms.css' %}">
     <link rel="stylesheet" href="{% static 'css/team.css' %}">
     <link rel="stylesheet" href="{% static 'css/acessibilidade.css' %}">
@@ -48,16 +48,13 @@
         <h2>Contato</h2>
         <form method="POST">
             {% csrf_token %}
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" placeholder="name" required>
             
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" placeholder="E-mail" required>
             
-            <label for="message">Mensagem:</label>
-            <textarea id="message" name="message" required></textarea>
+            <textarea id="message" name="message" placeholder="Mensagem" required></textarea>
             
-            <button type="submit">Enviar</button>
+            <button id="cta-button" type="submit">Enviar</button>
         </form>
     </section>
     <br>

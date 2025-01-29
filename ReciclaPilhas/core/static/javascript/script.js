@@ -1,22 +1,22 @@
-// Exemplo básico de JavaScript para exibir o mapa e outros efeitos
-document.addEventListener('DOMContentLoaded', function() {
-    const ctaButton = document.getElementById('cta-button');
+document.getElementById("cta-button").addEventListener("click", function () {
+    fetch("/pontos-coleta/")
+        .then(response => response.json())
+        .then(data => {
+            let listaPontos = document.getElementById("lista-pontos");
+            listaPontos.innerHTML = ""; // Limpa antes de adicionar novos itens
 
-    ctaButton.addEventListener('click', function() {
-        // Ação quando o botão de CTA for clicado (pode ser expandido)
-        alert('Mapa de pontos de coleta em breve!');
-        scrollToSection('collection-points');
-    });
+            if (data.length === 0) {
+                listaPontos.innerHTML = "<p>Nenhum ponto de coleta encontrado.</p>";
+                return;
+            }
 
-    // Função para rolar suavemente até a seção de pontos de coleta
-    function scrollToSection(sectionId) {
-        const section = document.getElementById(sectionId);
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-    }
-    
-    // Mapa fictício por enquanto (substitua por API de mapas, como Google Maps)
-    const map = document.getElementById('map');
-    map.innerHTML = '<p style="text-align:center; padding-top: 150px;">Mapa de pontos de coleta em breve...</p>';
+            data.forEach(ponto => {
+                let item = document.createElement("li");
+                item.innerHTML = `<strong>${ponto.nome_empresa}</strong><br>
+                                  📍 ${ponto.rua}, ${ponto.numero} - ${ponto.bairro}, ${ponto.cep}<br>
+                                  📞 ${ponto.telefone}`;
+                listaPontos.appendChild(item);
+            });
+        })
+        .catch(error => console.error("Erro ao carregar os pontos de coleta:", error));
 });

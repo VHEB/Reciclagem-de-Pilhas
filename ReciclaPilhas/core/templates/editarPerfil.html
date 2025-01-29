@@ -7,7 +7,7 @@
     <meta name="description" content="Recicle suas pilhas e baterias de forma responsável. Encontre pontos de coleta e ajude a preservar o meio ambiente.">
     <link rel="icon" href="{% static 'icon/Logo.ico' %}" type="image/x-icon">
     <title>Recicla Pilhas - Editar Perfil</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> <!-- Conectando o CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Conectando o CSS -->
     <link rel="stylesheet" href="{% static 'css/forms.css' %}">
     <link rel="stylesheet" href="{% static 'css/acessibilidade.css' %}">
     <script src="{% static 'javascript/acessibilidade.js' %}"></script>
@@ -51,26 +51,23 @@
             {% csrf_token %}
             {{ form.non_field_errors }}
 
-            <label for="id_nome">Nome:</label>
+            <input type="text" id="id_nome" name="nome" placeholder="Nome">
             {{ form.nome.errors }}
-            {{ form.nome }}
 
-            <label for="id_email">Email:</label>
+            <input type="email" id="id_email" name="email" placeholder="E-mail">
             {{ form.email.errors }}
-            {{ form.email }}
-
-            <label for="id_senha">Nova Senha:</label>
+        
+            <input type="password" id="id_senha" name="senha" placeholder="Nova Senha">
             {{ form.senha.errors }}
-            {{ form.senha }}
+        
 
-            <label for="confirmar-senha">Confirmar Nova Senha:</label>
-            <input type="password" id="confirmar-senha" name="confirmar-senha">
+            <input type="password" id="confirmar-senha" name="confirmar-senha" placeholder="Confirme a senha">
             
             {% if erro_confirmacao %}
                 <p style="color: red;">{{ erro_confirmacao }}</p>
             {% endif %}
             
-            <button type="submit">Salvar</button>
+            <button id="cta-button" type="submit">Salvar</button>
         </form>
         <a href="{% url 'perfil' %}">Voltar</a>
     </section>
